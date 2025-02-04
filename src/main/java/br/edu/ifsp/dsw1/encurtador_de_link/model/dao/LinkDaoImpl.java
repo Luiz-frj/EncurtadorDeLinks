@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.dao.connection.DatabaseConnection;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Link;
 
-public class LinkDaoImpl implements LinkDao {
+class LinkDaoImpl implements LinkDao {
 	private static final String INSERT = "INSERT INTO tb_links(link, short_link, user_name) VALUES (?,?,?)";
 	private static final String DELETE = "DELETE FROM tb_links WHERE user_name = ? AND link = ?";
 	private static final String UPDATE = "UPDATE tb_links SET link = ?, short_link = ? WHERE link = ?";

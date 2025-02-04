@@ -34,7 +34,7 @@ public class Link {
 	}
 
 	protected String generateShortLink(int size) {
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_1234567890";
         StringBuilder string_builder = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < size; i++) {

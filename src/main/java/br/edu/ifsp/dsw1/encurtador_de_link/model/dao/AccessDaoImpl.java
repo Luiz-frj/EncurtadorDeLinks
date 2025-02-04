@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.dao.connection.DatabaseConnection;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Access;
 
-public class AccessDaoImpl implements AccessDao {
+class AccessDaoImpl implements AccessDao {
 	private static final String INSERT = "INSERT INTO tb_access(link, ip) VALUES (?,?)";
 
 	@Override

@@ -9,13 +9,13 @@ CREATE TABLE tb_users (
 
 CREATE TABLE tb_links (
 	link VARCHAR(256) NOT NULL,
-    short_link VARCHAR(16) PRIMARY KEY,
+    short_link VARCHAR(12) PRIMARY KEY,
     user_name VARCHAR(30),
     FOREIGN KEY (user_name) REFERENCES tb_users(name)
 );
 
 CREATE TABLE tb_acess (
-	link VARCHAR(16),
+	link VARCHAR(12),
 	ip VARCHAR(15),
 	FOREIGN KEY (link) REFERENCES tb_links(short_link) ON DELETE CASCADE
 );

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.dao.connection.DatabaseConnection;
 import br.edu.ifsp.dsw1.encurtador_de_link.model.entity.User;
 
-public class UserDaoImpl implements UserDao {
+class UserDaoImpl implements UserDao {
 	private static final String INSERT = "INSERT INTO tb_users(name, password) VALUES (?,?)";
 	private static final String DELETE = "DELETE FROM tb_users WHERE name = ?";
 	private static final String GET_BY_NAME = "SELECT * FROM tb_users WHERE name = ?";
