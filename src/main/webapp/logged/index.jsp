@@ -4,7 +4,7 @@
     <jsp:include page="/includes/head.html"/>
 
     <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
-        <jsp:include page="/includes/navbar.jsp"/>
+        <jsp:include page="/includes/navbarLogado.jsp"/>
 
         <div class="container text-center">
             <button class="btn btn-dark rounded-pill btn-lg mb-3">LOGIN</button><br>
