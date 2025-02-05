@@ -9,7 +9,7 @@ class UserDaoImpl implements UserDao {
 	private static final String INSERT = "INSERT INTO tb_users(name, password) VALUES (?,?)";
 	private static final String DELETE = "DELETE FROM tb_users WHERE name = ?";
 	private static final String GET_BY_NAME = "SELECT * FROM tb_users WHERE name = ?";
-	private static final String GET_ALL = "SELECT * FROM tb_users";
+	//private static final String GET_ALL = "SELECT * FROM tb_users";
 	
 	@Override
 	public boolean insert(User user) {
