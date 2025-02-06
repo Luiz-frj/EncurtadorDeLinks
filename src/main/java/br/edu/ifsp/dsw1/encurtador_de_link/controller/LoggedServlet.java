@@ -27,7 +27,7 @@ public class LoggedServlet extends HttpServlet {
         String action = request.getParameter("action");
         
         if("logoff".equals(action)) {
-			
+			command = new LogoffCommand();
 		} else if("home".equals(action)) {
 			command = new LoggedHomeCommand();
 		} else if("short".equals(action)) {

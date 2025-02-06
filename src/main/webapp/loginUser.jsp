@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+	<%
+		String msg = (String) request.getAttribute("msg");
+		if (msg != null) { %>
+			<p><%=msg%></p>
+		<%}
+	%>
 	<form action="front.do?action=loginUser" method="post">
         <label for="name">Nome</label>
         <input type="text" id="name" name="name" placeholder="Digite seu nome" required="required">

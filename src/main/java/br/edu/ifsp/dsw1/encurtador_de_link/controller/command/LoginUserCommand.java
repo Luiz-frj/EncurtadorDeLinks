@@ -23,10 +23,12 @@ public class LoginUserCommand implements Command {
 			var session = request.getSession(true);
 			session.setAttribute("user", user);
 			session.setMaxInactiveInterval(3600);
-			System.out.println("Verificou");
 			return "logged.do?action=home";
 		}
-		return "front.do?action=home&msg=Não foi possível entrar na sua conta";
+		
+		request.setAttribute("msg", "Não foi possível entrar na sua conta");
+		
+		return "front.do?action=home";
 	}
 	
 }

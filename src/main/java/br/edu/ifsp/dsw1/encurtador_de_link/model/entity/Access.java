@@ -21,6 +21,9 @@ public class Access {
 	private void setIp(String ip) {
 		this.ip = ip;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Access [link=" + link + ", ip=" + ip + "]";
+	}
 }

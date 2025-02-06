@@ -17,6 +17,14 @@
 </head>
 <body>
 <jsp:include page="/includes/navbarLogged.jsp"/>
+	
+	<%
+		String msg = (String) request.getAttribute("msg");
+		if (msg != null) { %>
+			<p><%=msg%></p>
+		<%}
+	%>
+	
 	<form action="logged.do?action=short" method="post">
 	    <input type="text" name="link"
 	           placeholder="Digite o link" required="required">

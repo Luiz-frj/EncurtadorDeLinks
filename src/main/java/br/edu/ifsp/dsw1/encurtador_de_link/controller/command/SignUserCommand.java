@@ -21,9 +21,11 @@ public class SignUserCommand implements Command {
 		var user = new User(name, password, true);
 		
 		if (dao.insert(user)) {
-			return "front.do?action=home&msg=O seu usuário foi criado com sucesso";
+			request.setAttribute("msg", "O seu usuário foi criado com sucesso");
+			return "front.do?action=home";
 		}
+		request.setAttribute("msg", "Não foi possível criar um novo usuário");
 		
-		return "front.do?action=home&msg=Não foi possível criar um novo usuário";
+		return "front.do?action=home";
 	}
 }

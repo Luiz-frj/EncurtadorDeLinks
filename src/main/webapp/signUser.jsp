@@ -17,6 +17,13 @@
 </head>
 <body>
 	<jsp:include page="/includes/navbar.jsp"/>
+	
+	<%
+		String msg = (String) request.getAttribute("msg");
+		if (msg != null) { %>
+			<p><%=msg%></p>
+		<%}
+	%>
 
 	<form action="front.do?action=signUser" method="post">
 	    <label for="name">Nome</label>

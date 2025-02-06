@@ -7,12 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.Command;
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.FormLoginUserCommand;
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.FormSignUserCommand;
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.HomeCommand;
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.LoginUserCommand;
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.SignUserCommand;
+import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.*;
 
 @WebServlet("/front.do")
 public class FrontServlet_ extends HttpServlet {
@@ -31,7 +26,6 @@ public class FrontServlet_ extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if("loginUser".equals(action)) {
-			System.out.println("Chegou aqui");
 			command = new LoginUserCommand();
 		} else if("signUser".equals(action)) {
 			command = new SignUserCommand();
@@ -42,7 +36,7 @@ public class FrontServlet_ extends HttpServlet {
 		} else if("home".equals(action)) {
 			command = new HomeCommand();
 		} else if("short".equals(action)) {
-			
+			command = new ShortCommand();
 		}
 		
 		String view = command.execute(request, response);
