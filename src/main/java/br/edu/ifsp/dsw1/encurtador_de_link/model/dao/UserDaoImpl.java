@@ -55,7 +55,7 @@ class UserDaoImpl implements UserDao {
 			statement.setString(1, name);
 			var resultSet = statement.executeQuery();
 			if (resultSet.next()) {
-				user = new User(resultSet.getString("name"), resultSet.getString("password"), true);
+				user = new User(resultSet.getString("name"), resultSet.getString("password"), false);
 			}
 				
 		} catch (SQLException e) {

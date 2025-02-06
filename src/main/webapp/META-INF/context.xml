@@ -10,8 +10,8 @@
             minIdle="100"
             maxIdle="250"
             maxWaitMillis="10000"
-            username="root"
-            password="root"
+            username="local"
+            password=""
             driverClassName="com.mysql.cj.jdbc.Driver"
-            url="jdbc:mysql://localhost:3306/shortener_db" />
+            url="jdbc:mysql://localhost:3306/short_link_generator_db?useSSL=false&amp;serverTimezone=UTC" />
 </Context>

@@ -13,13 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Encurtador de Link</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-	<jsp:include page="/includes/navbar.jsp"/>
-	
-	<form action="front.do?action=short" method="post">
-	    <input type="text" name="textLink" placeholder="Link" required="required">
+<jsp:include page="/includes/navbarLogged.jsp"/>
+	<form action="logged.do?action=short" method="post">
+	    <input type="text" name="link"
+	           placeholder="Digite o link" required="required">
 	    <button type="submit">Encurtar</button>
 	</form>
 </body>

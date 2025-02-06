@@ -30,6 +30,13 @@ public class User {
 		this.password = password;
 	}
 	
+	public Boolean verify(String password) {
+		if (sha256(password).equals(this.password)) {
+			return true;
+		}
+		return false;
+	}
+	
 	private static String sha256(String password) {
         try {
             var digest = MessageDigest.getInstance("SHA-256");

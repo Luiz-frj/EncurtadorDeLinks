@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <jsp:include page="/includes/head.html"/>
+  	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Encurtador de Link</title>
+	    <link rel="stylesheet" href="../css/styles.css">
+	</head>
 
   <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 

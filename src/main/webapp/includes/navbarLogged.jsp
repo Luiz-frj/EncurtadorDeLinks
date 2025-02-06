@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <nav>
-    <a href="logged.do?action=homeLogged">Home</a>
-    <a href="logged.do?action=formUser&login=false">Logout</a>
+    <a href="logged.do?action=home">Home</a>
+    <a href="logged.do?action=logoff">Sair</a>
     <a href="logged.do?action=tableLinks">Tabela de Links</a>
 </nav>
