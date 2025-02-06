@@ -38,4 +38,14 @@
     <servlet-name>LoggedServlet</servlet-name>
     <url-pattern>/LoggedServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShortLinkServlet</display-name>
+    <servlet-name>ShortLinkServlet</servlet-name>
+    <servlet-class>br.edu.ifsp.dsw1.encurtador_de_link.controller.ShortLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShortLinkServlet</servlet-name>
+    <url-pattern>/ShortLinkServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -5,6 +5,7 @@ import java.util.Random;
 public class Link {
 	private String shortLink;
 	private String link;
+	private String userName;
 	private int size = 5;
 	
 	public Link(String shortLink, String link) {
@@ -15,6 +16,11 @@ public class Link {
 		setLink(link);
 		setShortLink(generateShortLink());
 	}
+	public Link(String short_link, String link, String userName) {
+		setShortLink(shortLink);
+		setLink(link);
+		setUserName(userName);
+	}
 	
 	public String getShortLink() {
 		return shortLink;
@@ -22,7 +28,13 @@ public class Link {
 	public String getLink() {
 		return link;
 	}
-
+	public String getUserName() {
+		return userName;
+	}
+	
+	private void setUserName(String userName) {
+		this.userName = userName;
+	}
 	private void setShortLink(String shortLink) {
 		this.shortLink = shortLink;
 	}

@@ -28,12 +28,12 @@ public class LoggedServlet extends HttpServlet {
         
         if("logoff".equals(action)) {
 			command = new LogoffCommand();
-		} else if("home".equals(action)) {
-			command = new LoggedHomeCommand();
 		} else if("short".equals(action)) {
 			
 		} else if("tableLinks".equals(action)) {
 			
+		} else {
+			command = new LoggedHomeCommand();
 		}
 
         String view = command.execute(request, response);

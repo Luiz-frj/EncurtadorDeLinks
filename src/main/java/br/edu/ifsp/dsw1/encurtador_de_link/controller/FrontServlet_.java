@@ -33,10 +33,10 @@ public class FrontServlet_ extends HttpServlet {
 			command = new FormLoginUserCommand();
 		} else if("formSignUser".equals(action)) {
 			command = new FormSignUserCommand();
-		} else if("home".equals(action)) {
-			command = new HomeCommand();
 		} else if("short".equals(action)) {
 			command = new ShortCommand();
+		}  else {
+			command = new HomeCommand();
 		}
 		
 		String view = command.execute(request, response);

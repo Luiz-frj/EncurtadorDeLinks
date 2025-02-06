@@ -96,7 +96,7 @@ class LinkDaoImpl implements LinkDao {
 			var result = statement.executeQuery();
 			
 			while(result.next()) {
-				var link = new Link(result.getString("short_link"), result.getString("link"));
+				var link = new Link(result.getString("short_link"), result.getString("link"), name);
 				list.add(link);
 			}
 		} catch (SQLException e) {
@@ -117,7 +117,7 @@ class LinkDaoImpl implements LinkDao {
 			var result = statement.executeQuery();
 			
 			while(result.next()) {
-				link = new Link(short_link, result.getString("link"));
+				link = new Link(short_link, result.getString("link"), result.getString("user_name"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
