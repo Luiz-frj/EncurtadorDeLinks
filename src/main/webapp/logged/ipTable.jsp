@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Encurtador de Link</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/encurtaLink.png" type="image/x-icon">
   </head>
 
   <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
