@@ -1,3 +1,5 @@
+<%@ page import="br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Link" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +13,12 @@
   <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
     <div class="container text-center">
+    
+    <%
+		List<Link> link_list = (List<Link>) request.getAttribute("link_list");
+    
+    	if (link_list != null) {
+	%>
 
       <table class="table table-dark table-bordered text-white">
         <thead>
@@ -24,22 +32,22 @@
         </tr>
         </thead>
         <tbody>
+        <%
+        	for (Link i : link_list) {
+      
+        %>
         <tr>
-          <td>http://exemplo.com/abc</td>
-          <td>http://short.ly/xyz</td>
-          <td>15</td>
-          <th><button><a href="logged.do?action=getIpTable&short_link=<%%>">VERIFICAR</a></button></th>
-          <td><button><a href="logged.do?action=getUpdateLink&short_link=<%%>">ALTERAR</a></button></td>
-          <th><button><a href="logged.do?action=deleteLink&short_link=<%%>">DELETAR</a></button></th>
+          <td><%=i.getLink()%></td>
+          <td>http://localhost:8888/encurtador_link_2/short/<%=i.getShortLink()%></td>
+          <td>0</td>
+          <th><button><a href="logged.do?action=getIpTable&short_link=<%=i.getShortLink()%>">VERIFICAR</a></button></th>
+          <td><button><a href="logged.do?action=getUpdateLink&short_link=<%=i.getShortLink()%>">ALTERAR</a></button></td>
+          <th><button><a href="logged.do?action=deleteLink&short_link=<%=i.getShortLink()%>">DELETAR</a></button></th>
         </tr>
-        <tr>
-          <td>http://exemplo.com/123</td>
-          <td>http://short.ly/789</td>
-          <td>8</td>
-          <th><button><a href="logged.do?action=getIpTable&short_link=<%%>">VERIFICAR</a></button></th>
-          <td><button><a href="logged.do?action=getUpdateLink&short_link=<%%>">ALTERAR</a></button></td>
-          <th><button><a href="logged.do?action=deleteLink&short_link=<%%>">DELETAR</a></button></th>
-        </tr>
+        <%} 
+        } else { %>
+        	<p>Ocorreu um erro ao receber os links do usuário</p>
+        <%} %>
         </tbody>
       </table>
       
