@@ -6,11 +6,18 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class HomeCommand implements Command {
+public class LogoffCommand implements Command {
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "/index.jsp";
+		
+		var session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+		}
+		
+		return "front.do?action=home";
 	}
 
 }

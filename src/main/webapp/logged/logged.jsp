@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Encurtador de Link</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-	<jsp:include page="/includes/navbar.jsp"/>
+<jsp:include page="/includes/navbarLogged.jsp"/>
 	
 	<%
 		String msg = (String) request.getAttribute("msg");
@@ -25,8 +25,10 @@
 		<%}
 	%>
 	
-	<form action="front.do?action=short" method="post">
-	    <input type="text" name="link" placeholder="Link" required="required">
+	<form action="logged.do?action=short" method="post">
+	    <input type="text" name="link" placeholder="Digite o link" required="required">
+	    <p>Deixe em branco para gerar um link curto aleatório</p>
+	    <input type="text" name="short_link" placeholder="Digite o link encurtado que deseja">
 	    <button type="submit">Encurtar</button>
 	</form>
 	

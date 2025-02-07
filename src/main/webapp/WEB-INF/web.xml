@@ -9,18 +9,25 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-
   <servlet>
     <description></description>
-    <display-name>FrontServlet</display-name>
-    <servlet-name>FrontServlet</servlet-name>
-    <servlet-class>br.edu.ifsp.dsw1.encurtador_de_link.controller.FrontServlet</servlet-class>
+    <display-name>FrontServlet_</display-name>
+    <servlet-name>FrontServlet_</servlet-name>
+    <servlet-class>br.edu.ifsp.dsw1.encurtador_de_link.controller.command.FrontServlet_</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>FrontServlet</servlet-name>
-    <url-pattern>/FrontServlet</url-pattern>
+    <servlet-name>FrontServlet_</servlet-name>
+    <url-pattern>/FrontServlet_</url-pattern>
   </servlet-mapping>
-
+  <filter>
+    <display-name>AuthenticationFilter</display-name>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>br.edu.ifsp.dsw1.encurtador_de_link.controller.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/AuthenticationFilter</url-pattern>
+  </filter-mapping>
   <servlet>
     <description></description>
     <display-name>LoggedServlet</display-name>
@@ -30,5 +37,15 @@
   <servlet-mapping>
     <servlet-name>LoggedServlet</servlet-name>
     <url-pattern>/LoggedServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShortLinkServlet</display-name>
+    <servlet-name>ShortLinkServlet</servlet-name>
+    <servlet-class>br.edu.ifsp.dsw1.encurtador_de_link.controller.ShortLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShortLinkServlet</servlet-name>
+    <url-pattern>/ShortLinkServlet</url-pattern>
   </servlet-mapping>
 </web-app>

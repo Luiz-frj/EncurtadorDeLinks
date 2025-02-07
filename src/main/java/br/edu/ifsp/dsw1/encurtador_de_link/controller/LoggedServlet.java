@@ -1,13 +1,13 @@
 package br.edu.ifsp.dsw1.encurtador_de_link.controller;
 
-import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
+
+import br.edu.ifsp.dsw1.encurtador_de_link.controller.command.*;
 
 @WebServlet("/logged.do")
 public class LoggedServlet extends HttpServlet {
@@ -25,22 +25,27 @@ public class LoggedServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Command command = null;
         String action = request.getParameter("action");
+        
+        if("logoff".equals(action)) {
+			command = new LogoffCommand();
+		} else if("short".equals(action)) {
+			command = new LoggedShortCommand();
+		} else if("tableLinks".equals(action)) {
+			command = new LinkTableCommand();
+		} else if("getIpTable".equals(action)) {
 
-        if("home".equals(action)) {
-            command = new LoggedHomeCommand();
-        }else if("encurtar".equals(action)) {
-            command = new CommandEncurtar();
-        }else if("formUser".equals(action)) {
-            command = new UserFormCommand();
-        }else if("saveUser".equals(action)) {
-            command = new SalvaUsuarioCommand();
-        }else if("login".equals(action)) {
-            command = new LoginCommand();
-        }
+		} else if("getUpdateLink".equals(action)) {
+			command = new GetUpdateLinkCommand();
+		} else if("updateLink".equals(action)) {
+			
+		} else if("deleteLink".equals(action)) {
+			
+		} else {
+			command = new LoggedHomeCommand();
+		}
 
         String view = command.execute(request, response);
         var dispatcher = request.getRequestDispatcher(view);
         dispatcher.forward(request, response);
     }
 }
-

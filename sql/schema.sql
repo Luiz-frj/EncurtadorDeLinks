@@ -4,7 +4,7 @@ USE short_link_generator_db;
 
 CREATE TABLE tb_users (
     name VARCHAR(30) PRIMARY KEY ,
-    senha VARCHAR(256) NOT NULL
+    password VARCHAR(256) NOT NULL
 );
 
 CREATE TABLE tb_links (

@@ -22,16 +22,15 @@ public class AuthenticationFilter implements Filter {
         HttpSession session = httpRequest.getSession(false);
 
         //Verificando os dados da sessão para verificar validade dela
-        if (session != null && session.getAttribute("user_id") != null) {
+        if (session != null && session.getAttribute("user") != null) {
             chain.doFilter(request, response);
         } else {
             //Caso não seja válida, mandamos o usuário para a index.
-            request.setAttribute("message", "Acesso permitido apenas para usuário logado.");
+            request.setAttribute("msg", "Acesso permitido apenas para usuário logado.");
 
-            var dispatcher = request.getRequestDispatcher("/front.do?action=index");
+            var dispatcher = request.getRequestDispatcher("/front.do?action=home");
             dispatcher.forward(request, response);
         }
     }
 
 }
-
