@@ -7,8 +7,8 @@
 	    <title>Encurtador de Link</title>
 	    <link rel="stylesheet" href="../css/styles.css">
 	</head>
-
   <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <jsp:include page="/includes/navbarLogged.jsp"/>
 
     <div class="container text-center">
 
