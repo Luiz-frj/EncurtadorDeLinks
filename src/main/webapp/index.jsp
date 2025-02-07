@@ -13,7 +13,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Encurtador de Link</title>
-		<link rel="stylesheet" href="/css/styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
 		<jsp:include page="/includes/navbar.jsp"/>
