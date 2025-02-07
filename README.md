@@ -30,7 +30,7 @@ Este é um sistema de encurtador de links que permite aos usuários:
 
 ## Estrutura do Projeto
 ```
-/link-shortener
+/EncurtadorDeLinks
 │── /src
 │   ├── /model      # Modelos de dados
 │   |    ├── /dao        # Camada de acesso a dados (DAO)
