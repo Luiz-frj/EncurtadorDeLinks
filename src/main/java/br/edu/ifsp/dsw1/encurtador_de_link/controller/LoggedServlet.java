@@ -31,6 +31,14 @@ public class LoggedServlet extends HttpServlet {
 		} else if("short".equals(action)) {
 			command = new LoggedShortCommand();
 		} else if("tableLinks".equals(action)) {
+			command = new LinkTableCommand();
+		} else if("getIpTable".equals(action)) {
+
+		} else if("getUpdateLink".equals(action)) {
+			command = new GetUpdateLinkCommand();
+		} else if("updateLink".equals(action)) {
+			
+		} else if("deleteLink".equals(action)) {
 			
 		} else {
 			command = new LoggedHomeCommand();
