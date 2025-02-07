@@ -29,7 +29,7 @@ public class LoggedServlet extends HttpServlet {
         if("logoff".equals(action)) {
 			command = new LogoffCommand();
 		} else if("short".equals(action)) {
-			
+			command = new LoggedShortCommand();
 		} else if("tableLinks".equals(action)) {
 			
 		} else {

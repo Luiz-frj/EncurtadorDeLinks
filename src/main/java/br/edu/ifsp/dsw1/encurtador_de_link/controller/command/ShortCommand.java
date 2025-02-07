@@ -18,7 +18,7 @@ public class ShortCommand implements Command {
 		
 		String link_input = request.getParameter("link");
 		
-		Link link = dao.get_by_link(link_input);
+		Link link = dao.get_by_link_no_user(link_input);
 		
 		if (link != null) {
 			request.setAttribute("short_link", link.getShortLink());

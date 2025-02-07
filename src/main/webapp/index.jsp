@@ -33,7 +33,7 @@
 	<%
 		String short_link = (String) request.getAttribute("short_link");
 		if (short_link != null) { %>
-			<a href="<%=short_link%>"><%=short_link%></a>
+			<a href="http://localhost:8080/encurtador_link_2/short/<%=short_link%>">http://localhost:8080/encurtador_link_2/short/<%=short_link%></a>
 		<%}
 	%>
 </body>

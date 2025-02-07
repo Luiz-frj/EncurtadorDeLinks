@@ -19,16 +19,18 @@ public class LoginUserCommand implements Command {
 		
 		var user = dao.getByName(name);
 		
-		if (user.verify(password)) {
-			var session = request.getSession(true);
-			session.setAttribute("user", user);
-			session.setMaxInactiveInterval(3600);
-			return "logged.do?action=home";
+		if (user != null) {
+		
+			if (user.verify(password)) {
+				var session = request.getSession(true);
+				session.setAttribute("user", user);
+				session.setMaxInactiveInterval(3600);
+				return "logged.do?action=home";
+			}
 		}
-		
 		request.setAttribute("msg", "Não foi possível entrar na sua conta");
-		
 		return "front.do?action=home";
+		
 	}
 	
 }

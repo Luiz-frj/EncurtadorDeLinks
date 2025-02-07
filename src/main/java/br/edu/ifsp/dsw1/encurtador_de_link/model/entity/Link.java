@@ -16,10 +16,15 @@ public class Link {
 		setLink(link);
 		setShortLink(generateShortLink());
 	}
-	public Link(String short_link, String link, String userName) {
+	public Link(String shortLink, String link, String userName) {
 		setShortLink(shortLink);
 		setLink(link);
 		setUserName(userName);
+	}
+	public Link(String link, User user) {
+		setShortLink(generateShortLink());
+		setLink(link);
+		setUserName(user.getName());
 	}
 	
 	public String getShortLink() {
@@ -63,6 +68,7 @@ public class Link {
     }
 	@Override
 	public String toString() {
-		return "Link [shortLink=" + shortLink + ", link=" + link + "]";
+		return "Link [shortLink=" + shortLink + ", link=" + link + ", userName=" + userName + ", size=" + size + "]";
 	}
+	
 }

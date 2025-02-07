@@ -10,5 +10,6 @@ public interface LinkDao {
 	boolean delete(Link link);
 	List<Link> get_by_user_name(String name);
 	Link get_by_short(String short_link);
-	Link get_by_link(String link);
+	Link get_by_link(String link_string, String user_name);
+	Link get_by_link_no_user(String link_string);
 }

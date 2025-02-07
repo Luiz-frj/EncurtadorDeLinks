@@ -14,7 +14,8 @@ class LinkDaoImpl implements LinkDao {
 	private static final String UPDATE = "UPDATE tb_links SET link = ?, short_link = ? WHERE link = ? AND short_link = ?";
 	private static final String GET_ALL_BY_USER_NAME = "SELECT * FROM tb_links WHERE user_name = ?";
 	private static final String GET_BY_SHORT = "SELECT * FROM tb_links WHERE short_link = ?";
-	private static final String GET_BY_LINK = "SELECT * FROM tb_links WHERE link = ?";
+	private static final String GET_BY_LINK = "SELECT * FROM tb_links WHERE link = ? AND user_name = ?";
+	private static final String GET_BY_LINK_NO_USER = "SELECT * FROM tb_links WHERE link = ?";
 
 	@Override
 	public boolean insert(Link link, String user_name, int tries) {
@@ -126,12 +127,33 @@ class LinkDaoImpl implements LinkDao {
 	}
 
 	@Override
-	public Link get_by_link(String link_string) {
+	public Link get_by_link(String link_string, String user_name) {
 		Link link = null;
 		try {
 			var connection = DatabaseConnection.getConnection();
 			
 			var statement = connection.prepareStatement(GET_BY_LINK);
+			
+			statement.setString(1, link_string);
+			statement.setString(2, user_name);
+			var result = statement.executeQuery();
+			
+			while (result.next()) {
+				link = new Link(result.getString("short_link"), link_string);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return link;
+	}
+
+	@Override
+	public Link get_by_link_no_user(String link_string) {
+		Link link = null;
+		try {
+			var connection = DatabaseConnection.getConnection();
+			
+			var statement = connection.prepareStatement(GET_BY_LINK_NO_USER);
 			
 			statement.setString(1, link_string);
 			var result = statement.executeQuery();
