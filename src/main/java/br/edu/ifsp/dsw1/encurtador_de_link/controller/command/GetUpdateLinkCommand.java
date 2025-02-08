@@ -11,8 +11,14 @@ public class GetUpdateLinkCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		var short_link = request.getAttribute("short_link");
+		
+		if (short_link != null) {
+			request.setAttribute("short_link", short_link);
+		}
 			
-		return null;
+		return "/logged/updateLink.jsp";
 	}
 
 }

@@ -10,8 +10,9 @@ import br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Link;
 
 class LinkDaoImpl implements LinkDao {
 	private static final String INSERT = "INSERT INTO tb_links(link, short_link, user_name) VALUES (?,?,?)";
-	private static final String DELETE = "DELETE FROM tb_links WHERE short_link = ? AND link = ?";
-	private static final String UPDATE = "UPDATE tb_links SET link = ?, short_link = ? WHERE link = ? AND short_link = ?";
+	private static final String DELETE = "DELETE FROM tb_links WHERE short_link = ? AND user_name = ?";
+	private static final String UPDATE = "UPDATE tb_links SET link = ?, short_link = ? WHERE short_link = ? AND user_name = ?";
+	private static final String UPDATE_LINK_ONLY = "UPDATE tb_links SET link = ? WHERE short_link = ?";
 	private static final String GET_ALL_BY_USER_NAME = "SELECT * FROM tb_links WHERE user_name = ?";
 	private static final String GET_BY_SHORT = "SELECT * FROM tb_links WHERE short_link = ?";
 	private static final String GET_BY_LINK = "SELECT * FROM tb_links WHERE link = ? AND user_name = ?";
@@ -19,6 +20,7 @@ class LinkDaoImpl implements LinkDao {
 
 	@Override
 	public boolean insert(Link link, String user_name, int tries) {
+		System.out.println("Inserting: " + link.getLink() + " | " + link.getShortLink());
 		int rows = 0;
 		if (tries > 0) {
 			if(link != null) {
@@ -48,6 +50,8 @@ class LinkDaoImpl implements LinkDao {
 
 	@Override
 	public boolean update(Link link, Link newLink) {
+		System.out.println("Executing Update: " + UPDATE + " with values: "
+			    + newLink.getLink() + ", " + newLink.getShortLink() + ", " + link.getShortLink());
 		int rows = 0;
 		if(link != null && newLink != null) {
 			try(var connection = DatabaseConnection.getConnection();
@@ -55,8 +59,8 @@ class LinkDaoImpl implements LinkDao {
 				
 				statement.setString(1, newLink.getLink());
 				statement.setString(2, newLink.getShortLink());
-				statement.setString(3, link.getLink());
-				statement.setString(4, link.getShortLink());
+				statement.setString(3, link.getShortLink());
+				statement.setString(4, link.getUserName());
 				
 				rows = statement.executeUpdate();
 			}catch(SQLException e) {
@@ -74,7 +78,7 @@ class LinkDaoImpl implements LinkDao {
 				 var statement = connection.prepareStatement(DELETE)){
 				
 				statement.setString(1, link.getShortLink());
-				statement.setString(2, link.getLink());
+				statement.setString(2, link.getUserName());
 				
 				rows = statement.executeUpdate();
 				
@@ -166,4 +170,27 @@ class LinkDaoImpl implements LinkDao {
 		}
 		return link;
 	}
+
+
+	@Override
+	public boolean update_link_only(Link link) {
+		System.out.println("Executing Update: " + UPDATE + " with value: "
+			    + link);
+		int rows = 0;
+		if(link != null && link != null) {
+			try(var connection = DatabaseConnection.getConnection();
+				var statement = connection.prepareStatement(UPDATE_LINK_ONLY)){
+				
+				statement.setString(1, link.getLink());
+				statement.setString(2, link.getShortLink());
+				
+				rows = statement.executeUpdate();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return rows > 0;
+	}
+	
+	
 }

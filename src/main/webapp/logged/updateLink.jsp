@@ -21,18 +21,20 @@
 
 		<%
 			String msg = (String) request.getAttribute("msg");
+			String short_link_old = (String) request.getParameter("short_link");
+			
 			if (msg != null) { %>
 				<p><%=msg%></p>
 			<%}
 		%>
 
-		<form action="front.do?action=signUser" method="post">
+		<form action="logged.do?action=updateLink&short_link_old=<%=short_link_old%>" method="post">
 			<label for="link">Link Longo</label>
-			<input type="text" id="link" name="link" placeholder="Coloque o link longo" required="required">
+			<input type="text" id="link" name="link" placeholder="Coloque o link longo" required="required" value="<%=request.getParameter("link")%>">
 
 			<p>Deixe o link curto em branco para permanecer o mesmo de antes</p>
 			<label for="short_link">Link Curto</label>
-			<input type="password" id="short_link" name="short_link" placeholder="Escolha um código para o link encurtado">
+			<input type="text" id="short_link" name="short_link" placeholder="Escolha um código para o link encurtado">
 
 			<button type="submit">Alterar Link</button>
 		</form>

@@ -33,13 +33,13 @@ public class LoggedServlet extends HttpServlet {
 		} else if("tableLinks".equals(action)) {
 			command = new LinkTableCommand();
 		} else if("getIpTable".equals(action)) {
-
+			command = new GetIpTableCommand();
 		} else if("getUpdateLink".equals(action)) {
 			command = new GetUpdateLinkCommand();
 		} else if("updateLink".equals(action)) {
-			
+			command = new UpdateLinkCommand();
 		} else if("deleteLink".equals(action)) {
-			
+			command = new DeleteCommand();
 		} else {
 			command = new LoggedHomeCommand();
 		}

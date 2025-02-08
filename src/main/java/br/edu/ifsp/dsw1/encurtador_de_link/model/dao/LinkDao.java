@@ -7,6 +7,7 @@ import br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Link;
 public interface LinkDao {
 	boolean insert(Link link, String user_name, int tries);
 	boolean update(Link link, Link newLink);
+	boolean update_link_only(Link link);
 	boolean delete(Link link);
 	List<Link> get_by_user_name(String name);
 	Link get_by_short(String short_link);

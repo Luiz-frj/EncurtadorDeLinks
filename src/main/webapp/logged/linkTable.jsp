@@ -1,5 +1,7 @@
 <%@ page import="br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Link" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="br.edu.ifsp.dsw1.encurtador_de_link.model.entity.Access" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +19,7 @@
     
     <%
 		List<Link> link_list = (List<Link>) request.getAttribute("link_list");
+    	HashMap<Access, Integer> access_map = (HashMap<Access, Integer>) request.getAttribute("access_map");
     
     	if (link_list != null) {
 	%>
@@ -35,14 +38,22 @@
         <tbody>
         <%
         	for (Link i : link_list) {
+        	
+        		int access_count = 0;
+        	
+	        	for (Access ac : access_map.keySet()) {
+	        		if (ac.getLink().equals(i.getShortLink())) {
+	        			access_count = access_map.get(ac);
+	        		}
+	        	}
       
         %>
         <tr>
           <td><%=i.getLink()%></td>
           <td>http://localhost:8888/encurtador_link_2/short/<%=i.getShortLink()%></td>
-          <td>0</td>
+          <td><%=access_count %></td>
           <th><button><a href="logged.do?action=getIpTable&short_link=<%=i.getShortLink()%>">VERIFICAR</a></button></th>
-          <td><button><a href="logged.do?action=getUpdateLink&short_link=<%=i.getShortLink()%>">ALTERAR</a></button></td>
+          <td><button><a href="logged.do?action=getUpdateLink&short_link=<%=i.getShortLink()%>&link=<%=i.getLink()%>">ALTERAR</a></button></td>
           <th><button><a href="logged.do?action=deleteLink&short_link=<%=i.getShortLink()%>">DELETAR</a></button></th>
         </tr>
         <%} 
