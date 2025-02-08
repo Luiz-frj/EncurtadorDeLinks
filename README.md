@@ -1,4 +1,4 @@
-![short](https://github.com/user-attachments/assets/5685e9cc-4b8f-4388-9c3a-f3bafac87b17)# Encurtador de Links
+![short](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/encurtaLink.png?raw=true)# Encurtador de Links
 
 ## Descrição
 Este é um sistema de encurtador de links que permite aos usuários:
@@ -87,56 +87,56 @@ Abaixo estão algumas capturas de tela das principais funcionalidades do sistema
 
 1. **Página Inicial**
    ![Tela Inicial](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/home_page.png?raw=true)
-   A tela inicial possui uma entrada de texto para a criação do link encurtado sem vínculo com usuário,
+   - A tela inicial possui uma entrada de texto para a criação do link encurtado sem vínculo com usuário,
    além de uma barra de navegação entre a tela inicial, tela de login e de cadastro.
 
    ---
    
 2. **Tela de Login**
    ![Tela de Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_page.png?raw=true)
-   A tela de login possui duas entradas de texto para nome e senha respectivamente
+   - A tela de login possui duas entradas de texto para nome e senha respectivamente
    ![Falha no Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_not_found.png?raw=true)
-   Caso o usuário insira informações de um usuário que não existe no banco de dados, ou no caso de um erro inesperado do sistema,
+   - Caso o usuário insira informações de um usuário que não existe no banco de dados, ou no caso de um erro inesperado do sistema,
    o mesmo irá devolver uma mensagem de erro ao usuário o informando sobre o ocorrido.
    ![Login Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/logged_home.png?raw=true)
-   Caso o contrário, o usuário insira as informações corretamente, ele será redirecionado para a tela principal de seu usuário,
+   - Caso o contrário, o usuário insira as informações corretamente, ele será redirecionado para a tela principal de seu usuário,
    onde voltar para a tela principal, sair de seu usuário atual ou gerenciar seus links ativos.
 
    ---
    
 3. **Tela de Cadastro**
    ![Tela de Cadastro](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign.png?raw=true)
-   A tela de cadastro possui 2 entradas de texto, nome e senha respectivamente, que o usuário utilizará na aplicação.
+   - A tela de cadastro possui 2 entradas de texto, nome e senha respectivamente, que o usuário utilizará na aplicação.
    ![Falha ao Cadastrar](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_error.png?raw=true)
-   Caso o usuário insira o nome de um usuário existe, ou no caso de um erro inesperado ocorrer, o sistema irá devolver
+   - Caso o usuário insira o nome de um usuário existe, ou no caso de um erro inesperado ocorrer, o sistema irá devolver
    uma mensagem na tela principal informando o usuário do ocorrido.
    ![Cadastro Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_success.png?raw=true)
-   Caso o contrário, o cadastro do usuário seja feito sem nenhum problema, uma mensagem de sucesso o será entregue pela
+   - Caso o contrário, o cadastro do usuário seja feito sem nenhum problema, uma mensagem de sucesso o será entregue pela
    tela principal da aplicação.
 
    ---
    
 4. **Encurtamento de Links**
    ![Encurtamento de links sem usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short.png?raw=true)
-   O usuário pode preferir criar links curtos sem vínculo com uma conta própria para o sistema, nesse caso a aplicação irá gerar
+   - O usuário pode preferir criar links curtos sem vínculo com uma conta própria para o sistema, nesse caso a aplicação irá gerar
    um link curto automaticamente, o link terá um tamanho mínimo de 5 caractéres, mas poderá se estender até 12 caractéres.
    ![Encurtamento de links sem usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short_created.png?raw=true)
-   Caso o link curto do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto para
+   - Caso o link curto do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto para
    ser utilizado.
    
 
-   ![Encurtamento de links com usuário]([https://github.com/Luiz-frj/EncurtadorDeLinks/assets/screenshots/](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/)fill_logged_short.png?raw=true)
-   O usuário com uma conta ativa na aplicação poderá gerar links curtos personalizados, podendo escolher códigos de 5 à 12 caractéres,
+   ![Encurtamento de links com usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/fill_logged_short.png?raw=true)
+   - O usuário com uma conta ativa na aplicação poderá gerar links curtos personalizados, podendo escolher códigos de 5 à 12 caractéres,
    além de poder verificar a quantidade de acessos e o localização de cada um que trafegou pelo seu link.
    ![Encurtamento de links com usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/custom_short_generated.png?raw=true)
-   Caso o link curto personalizado do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto
+   - Caso o link curto personalizado do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto
    para ser utilizado e observado.
 
    ---
    
 5. **Gerenciamento de Links**
    ![Gerenciamento de Links](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/table_link.png?raw=true)
-   Um usuário logado poderá acessar a aba "Tabela de Links" que apresentará todos os links que o usuário criou e
+   - Um usuário logado poderá acessar a aba "Tabela de Links" que apresentará todos os links que o usuário criou e
    quantos acessos, de maneira geral, cada um obteve até o momento, sendo disponibilizado 3 funcionalidades para cada um:
    "Analisar seus acessos", "Alterar o link" e "Deletar o link"
 
