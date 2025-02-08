@@ -60,7 +60,7 @@ O Tomcat está configurado para conectar a um banco de dados MySQL com as seguin
 
 Para configurar o banco de dados:
 1. Instale o MySQL em sua máquina.
-2. Execute os scripts SQL disponíveis na pasta `/database` para criar as tabelas necessárias.
+2. Execute os scripts SQL disponíveis na pasta `/scripts_sql` para criar as tabelas necessárias.
 
 ### Executando o Projeto
 O servidor Tomcat está configurado para rodar na porta **8888**. Para iniciar o projeto:
