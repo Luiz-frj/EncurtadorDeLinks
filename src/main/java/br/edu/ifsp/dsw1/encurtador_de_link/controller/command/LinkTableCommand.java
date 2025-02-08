@@ -32,9 +32,9 @@ public class LinkTableCommand implements Command {
         	
         	HashMap<Access, Integer> access_map = access_dao.get_short_access_count_by_user(user.getName());
         	
-        	request.setAttribute("link_list", link_list);
+        	request.setAttribute("link_list", link_list); // essa lista será responsável por enviar apenas os links originais e curtos
         	
-        	request.setAttribute("access_map", access_map);
+        	request.setAttribute("access_map", access_map); // esse hashmap será responsável por enviar basicamente a quantidade de acessos em cada link, a key será utilizada para identificar o link, o valor será a contagem
         }
 		
 		return "/logged/linkTable.jsp";

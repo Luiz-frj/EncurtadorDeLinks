@@ -21,7 +21,7 @@ public class LoginUserCommand implements Command {
 		
 		if (user != null) {
 		
-			if (user.verify(password)) {
+			if (user.verify(password)) { // verifica se a senha passada pelo usuário (criptografando-a) é a mesma que está armazenada seu usuário, que foi recebido pelo banco de dados sem ter sua senha criptografada novamente
 				var session = request.getSession(true);
 				session.setAttribute("user", user);
 				session.setMaxInactiveInterval(3600);

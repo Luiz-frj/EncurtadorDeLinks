@@ -32,7 +32,7 @@ public class UpdateLinkCommand implements Command {
 			User user = (User) session.getAttribute("user");
 			
 			if (short_link_input != null) {
-				if (short_link_input.length() >= 5 && short_link_input.length() <= 12) {
+				if (short_link_input.length() >= 5 && short_link_input.length() <= 12) { // utilizando a mesma lógica de criar um link curto personalizado, caso o identificador esteja no tamanho adequado, o identificador será alterado para o novo, assim como o link longo.
 					Link link = dao.get_by_short(old_short_link_input);
 					
 					if (link != null) {
@@ -44,7 +44,7 @@ public class UpdateLinkCommand implements Command {
 						}
 					}
 				} else {
-					if (short_link_input.isEmpty()) {
+					if (short_link_input.isEmpty()) { // se o usuário deixar o identificador vazio, significa que ele pretende deixar o identificador igual, então apenas o link longo será alterado.
 						Link link = new Link(old_short_link_input, link_input, user.getName());
 						
 						if (dao.update_link_only(link)) {

@@ -50,7 +50,7 @@
         %>
         <tr>
           <td><%=i.getLink()%></td>
-          <td>http://localhost:8888/encurtador_link_2/short/<%=i.getShortLink()%></td>
+          <td><a href="http://localhost:8888/encurtador_link_2/short/<%=i.getShortLink()%>">http://localhost:8888/encurtador_link_2/short/<%=i.getShortLink()%></a></td>
           <td><%=access_count %></td>
           <th><button><a href="logged.do?action=getIpTable&short_link=<%=i.getShortLink()%>">VERIFICAR</a></button></th>
           <td><button><a href="logged.do?action=getUpdateLink&short_link=<%=i.getShortLink()%>&link=<%=i.getLink()%>">ALTERAR</a></button></td>

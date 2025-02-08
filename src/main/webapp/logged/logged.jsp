@@ -25,6 +25,13 @@
 				<p><%=msg%></p>
 			<%}
 		%>
+		
+		<%
+			String short_link = (String) request.getAttribute("short_link");
+			if (short_link != null) { %>
+				<a href="http://localhost:8080/encurtador_link_2/short/<%=short_link%>">http://localhost:8080/encurtador_link_2/short/<%=short_link%></a>
+			<%}
+		%>
 
 		<form action="logged.do?action=short" method="post">
 			<input type="text" name="link" placeholder="Digite o link" required="required">
@@ -32,12 +39,5 @@
 			<input type="text" name="short_link" placeholder="Digite o link encurtado que deseja">
 			<button type="submit">Encurtar</button>
 		</form>
-
-		<%
-			String short_link = (String) request.getAttribute("short_link");
-			if (short_link != null) { %>
-				<a href="http://localhost:8080/encurtador_link_2/short/<%=short_link%>">http://localhost:8080/encurtador_link_2/short/<%=short_link%></a>
-			<%}
-		%>
 	</body>
 </html>

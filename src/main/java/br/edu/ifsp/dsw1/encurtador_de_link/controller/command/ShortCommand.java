@@ -25,7 +25,7 @@ public class ShortCommand implements Command {
 		} else {
 			link = new Link(link_input);
 			
-			if (dao.insert(link, null, 5)) {
+			if (dao.insert(link, null, 7)) { // é inserido um link sem identificador personalizado, e sem usuário vinculado, o insert possuirá 7 tentativas, pois, caso o identificador gerado já exista na tabela, é feito uma nova tentativa agora com o gerador acrescido de um caractér em seu algoritmo, com 7 tentativas chegamos a 12 caractéres, o tamanho máximo.
 				request.setAttribute("short_link", link.getShortLink());
 			} else {
 				request.setAttribute("msg", "Ocorreu um erro ao criar o link");

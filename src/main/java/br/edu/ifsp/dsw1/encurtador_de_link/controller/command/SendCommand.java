@@ -28,13 +28,13 @@ public class SendCommand implements Command{
 		Link link = linkdao.get_by_short(short_link);
 		
 		if (link != null) {
-			String ipAddress = request.getHeader("X-FORWARDED-FOR");  
+			String ipAddress = request.getHeader("X-FORWARDED-FOR"); // essa seção recuera o endereço de ip do usuário que está acessando o link
 			if (ipAddress == null || "".equals(ipAddress)) {
 				ipAddress = request.getRemoteAddr();
 			}
-			Access access = new Access(link.getShortLink(), ipAddress);
+			Access access = new Access(link.getShortLink(), ipAddress); // o ip só assumirá 2 formas: ip correto ou nulo
 			
-			accessdao.insert(access);
+			accessdao.insert(access); // então é gerado um acesso pelo link com o ip coletado
 			
 			return link.getLink();
 		}

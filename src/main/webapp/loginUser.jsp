@@ -10,6 +10,7 @@
         <link rel="shortcut icon" href="images/encurtaLink.png" type="image/x-icon">
     </head>
     <body>
+    	<jsp:include page="/includes/navbar.jsp"/>
 
         <%
             String msg = (String) request.getAttribute("msg");
