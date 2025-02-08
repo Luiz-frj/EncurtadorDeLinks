@@ -156,10 +156,6 @@ Usuários logados têm acesso à aba "Tabela de Links", que lista todos os links
 
 ---
 
-Se precisar de mais ajustes ou algo adicional, é só avisar!
-
----
-
 ## Diagramas do Sistema
 ### Diagrama de Classe
 ![Diagrama de Classe](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/diagrams/ClassDiagram.png?raw=true)
