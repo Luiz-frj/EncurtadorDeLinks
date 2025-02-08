@@ -44,7 +44,7 @@
       <%} else { %>
       <p>Ocorreu um erro ao receber os links do usuário</p>
       <%} %>
-      <button class="btn btn-danger rounded-pill btn-lg">VOLTAR</button>
+      <button class="btn btn-danger rounded-pill btn-lg"><a href="logged.do?action=home">VOLTAR</a></button>
     </div>
   </body>
 </html>

@@ -24,9 +24,7 @@ public class SendCommand implements Command{
 		String pathString = request.getRequestURI().substring(request.getContextPath().length());
 		Path path = Paths.get(pathString);
 		String short_link = path.getName(path.getNameCount() - 1).toString();
-		
-		System.out.println(short_link);
-		
+
 		Link link = linkdao.get_by_short(short_link);
 		
 		if (link != null) {
