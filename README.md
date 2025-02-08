@@ -85,70 +85,78 @@ Você pode acessar a aplicação sem precisar configurá-la em seu computador pe
 ## Capturas de Tela
 Abaixo estão algumas capturas de tela das principais funcionalidades do sistema:
 
-1. **Página Inicial**
-   ![Tela Inicial](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/home_page.png?raw=true)
-   - A tela inicial possui uma entrada de texto para a criação do link encurtado sem vínculo com usuário,
-   além de uma barra de navegação entre a tela inicial, tela de login e de cadastro.
+### 1. **Página Inicial**  
+![Tela Inicial](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/home_page.png?raw=true)  
+A página inicial oferece uma entrada de texto para criar links encurtados sem a necessidade de um usuário logado. Além disso, possui uma barra de navegação para acessar as telas de login e cadastro.
 
-   ---
-   
-2. **Tela de Login**
-   ![Tela de Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_page.png?raw=true)
-   - A tela de login possui duas entradas de texto para nome e senha respectivamente
-   ![Falha no Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_not_found.png?raw=true)
-   - Caso o usuário insira informações de um usuário que não existe no banco de dados, ou no caso de um erro inesperado do sistema,
-   o mesmo irá devolver uma mensagem de erro ao usuário o informando sobre o ocorrido.
-   ![Login Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/logged_home.png?raw=true)
-   - Caso o contrário, o usuário insira as informações corretamente, ele será redirecionado para a tela principal de seu usuário,
-   onde voltar para a tela principal, sair de seu usuário atual ou gerenciar seus links ativos.
+---
 
-   ---
-   
-3. **Tela de Cadastro**
-   ![Tela de Cadastro](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign.png?raw=true)
-   - A tela de cadastro possui 2 entradas de texto, nome e senha respectivamente, que o usuário utilizará na aplicação.
-   ![Falha ao Cadastrar](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_error.png?raw=true)
-   - Caso o usuário insira o nome de um usuário existe, ou no caso de um erro inesperado ocorrer, o sistema irá devolver
-   uma mensagem na tela principal informando o usuário do ocorrido.
-   ![Cadastro Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_success.png?raw=true)
-   - Caso o contrário, o cadastro do usuário seja feito sem nenhum problema, uma mensagem de sucesso o será entregue pela
-   tela principal da aplicação.
+### 2. **Tela de Login**  
+![Tela de Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_page.png?raw=true)  
+Nesta tela, o usuário pode inserir seu nome e senha para acessar o sistema.  
 
-   ---
-   
-4. **Encurtamento de Links**
-   ![Encurtamento de links sem usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short.png?raw=true)
-   - O usuário pode preferir criar links curtos sem vínculo com uma conta própria para o sistema, nesse caso a aplicação irá gerar
-   um link curto automaticamente, o link terá um tamanho mínimo de 5 caractéres, mas poderá se estender até 12 caractéres.
-   ![Encurtamento de links sem usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short_created.png?raw=true)
-   - Caso o link curto do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto para
-   ser utilizado.
-   
+- **Falha no Login**  
+  ![Falha no Login](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/login_not_found.png?raw=true)  
+  Caso as informações inseridas estejam incorretas ou o usuário não exista no banco de dados, uma mensagem de erro será exibida.  
 
-   ![Encurtamento de links com usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/fill_logged_short.png?raw=true)
-   - O usuário com uma conta ativa na aplicação poderá gerar links curtos personalizados, podendo escolher códigos de 5 à 12 caractéres,
-   além de poder verificar a quantidade de acessos e o localização de cada um que trafegou pelo seu link.
-   ![Encurtamento de links com usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/custom_short_generated.png?raw=true)
-   - Caso o link curto personalizado do usuário seja criado sem nenhum problema, o mesmo será apresentado na tela principal da aplicação pronto
-   para ser utilizado e observado.
+- **Login Bem-Sucedido**  
+  ![Login Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/logged_home.png?raw=true)  
+  Se o login for bem-sucedido, o usuário será redirecionado para sua página principal, onde poderá voltar à tela inicial, gerenciar seus links ou encerrar a sessão.  
 
-   ---
-   
-5. **Gerenciamento de Links**
-   ![Gerenciamento de Links](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/table_link.png?raw=true)
-   - Um usuário logado poderá acessar a aba "Tabela de Links" que apresentará todos os links que o usuário criou e
-   quantos acessos, de maneira geral, cada um obteve até o momento, sendo disponibilizado 3 funcionalidades para cada um:
-   "Analisar seus acessos", "Alterar o link" e "Deletar o link"
+---
 
-   ![Verificar Acessos](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/check_access.png?raw=true)
-   Ao clicar em "Verificar Acessos" o usuário será apresentado com uma tabela contendo a quantidade que cada ip trafegou por
-   aquele link em específico.
-   ![Alterar Link Encurtado](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/update_link.png?raw=true)
-   Ao clicar em "Alterar Link" o usuário poderá alterar o link original e até mesmo o identificador do link curto,
-   caso o usuário escolha deixar o identificar em branco, o identificador permanecerá o mesmo de antes.
-   ![Deletar Link Encurtado](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/deleted.png?raw=true)
-   Ao clicar em "Deletar Link" o usuário será redirecionado para a página principal onde receberá uma mensagem
-   informando se ocorreu um erro ou se a operação foi bem sucedida.
+### 3. **Tela de Cadastro**  
+![Tela de Cadastro](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign.png?raw=true)  
+Permite que novos usuários criem uma conta com nome e senha.  
+
+- **Falha ao Cadastrar**  
+  ![Falha ao Cadastrar](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_error.png?raw=true)  
+  Caso o nome de usuário já exista ou ocorra um erro inesperado, uma mensagem será exibida informando o problema.  
+
+- **Cadastro Bem-Sucedido**  
+  ![Cadastro Sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/sign_success.png?raw=true)  
+  Após um cadastro bem-sucedido, uma mensagem de confirmação será exibida.  
+
+---
+
+### 4. **Encurtamento de Links**  
+#### Sem Usuário  
+![Encurtamento de links sem usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short.png?raw=true)  
+Usuários não registrados podem criar links curtos automaticamente. Os links têm entre 5 e 12 caracteres.  
+
+- **Link Criado com Sucesso**  
+  ![Encurtamento de links sem usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/short_created.png?raw=true)  
+  Caso o link seja gerado corretamente, ele será exibido na tela para uso.  
+
+#### Com Usuário  
+![Encurtamento de links com usuário](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/fill_logged_short.png?raw=true)  
+Usuários logados podem criar links personalizados com códigos de 5 a 12 caracteres e monitorar acessos ao link, incluindo localização e quantidade de cliques.  
+
+- **Link Personalizado Criado com Sucesso**  
+  ![Encurtamento de links com usuário sucedido](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/custom_short_generated.png?raw=true)  
+  Links personalizados criados sem problemas serão exibidos para uso e acompanhamento.  
+
+---
+
+### 5. **Gerenciamento de Links**  
+![Gerenciamento de Links](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/table_link.png?raw=true)  
+Usuários logados têm acesso à aba "Tabela de Links", que lista todos os links criados, o número total de acessos e permite realizar três ações: **verificar acessos**, **alterar** ou **deletar** links.
+
+- **Verificar Acessos**  
+  ![Verificar Acessos](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/check_access.png?raw=true)  
+  Mostra uma tabela com os IPs que acessaram o link e a quantidade de acessos por IP.  
+
+- **Alterar Link**  
+  ![Alterar Link Encurtado](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/update_link.png?raw=true)  
+  Permite modificar o link original ou o identificador do link curto. Caso o identificador seja deixado em branco, ele permanecerá inalterado.  
+
+- **Deletar Link**  
+  ![Deletar Link Encurtado](https://github.com/Luiz-frj/EncurtadorDeLinks/blob/main/assets/screenshots/deleted.png?raw=true)  
+  Após deletar um link, o sistema redireciona o usuário para a tela principal com uma mensagem indicando sucesso ou erro na operação.  
+
+---
+
+Se precisar de mais ajustes ou algo adicional, é só avisar!
 
 ---
 
